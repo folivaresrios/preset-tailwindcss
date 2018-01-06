@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelFrontendPresets\TailwindCssPreset;
+namespace KissDev\TailwindCssPreset;
 
 use Illuminate\Support\Arr;
 use Illuminate\Container\Container;
@@ -33,29 +33,24 @@ class TailwindCssPreset extends Preset
 
     protected static function updateStyles()
     {
-        (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
         (new Filesystem)->delete(public_path('js/app.js'));
         (new Filesystem)->delete(public_path('css/app.css'));
 
-        if (! file_exists(resource_path('assets/css'))) {
-            mkdir(resource_path('assets/css'));
-        }
-
-        copy(__DIR__.'/tailwindcss-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
+        copy(__DIR__ . '/tailwindcss-stubs/resources/assets/sass/app.scss', resource_path('assets/sass/app.scss'));
     }
 
     protected static function updateBootstrapping()
     {
-        copy(__DIR__.'/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
-        copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/tailwindcss-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__ . '/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
+        copy(__DIR__ . '/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__ . '/tailwindcss-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
     }
 
     protected static function updateWelcomePage()
     {
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
 
-        copy(__DIR__.'/tailwindcss-stubs/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+        copy(__DIR__ . '/tailwindcss-stubs/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
     protected static function scaffoldAuth()
@@ -68,7 +63,7 @@ class TailwindCssPreset extends Preset
             FILE_APPEND
         );
 
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/views', resource_path('views'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/tailwindcss-stubs/views', resource_path('views'));
     }
 
     protected static function compileControllerStub()
@@ -76,7 +71,7 @@ class TailwindCssPreset extends Preset
         return str_replace(
             '{{namespace}}',
             Container::getInstance()->getNamespace(),
-            file_get_contents(__DIR__.'/tailwindcss-stubs/controllers/HomeController.stub')
+            file_get_contents(__DIR__ . '/tailwindcss-stubs/controllers/HomeController.stub')
         );
     }
 }

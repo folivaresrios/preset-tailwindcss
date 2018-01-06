@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelFrontendPresets\TailwindCssPreset;
+namespace KissDev\TailwindCssPreset;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;

@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
+    <div class="sm:w-5/6 mx-auto lg:w-1/3">
         <div class="rounded shadow">
-            <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded-t">
+            <div class="font-medium text-sm text-brand-darker bg-white p-3 rounded-t border-b border-grey-light">
                 Dashboard
             </div>
             <div class="bg-white p-3 rounded-b">

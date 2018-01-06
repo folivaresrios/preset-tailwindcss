@@ -128,13 +128,13 @@ let colors = {
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
 
-  get ['brand-darkest']() { return this['orange-darkest']; },
-  get ['brand-darker']() { return this['orange-darker']; },
-  get ['brand-dark']() { return this['orange-dark']; },
-  get ['brand']() { return this['orange']; },
-  get ['brand-light']() { return this['orange-light']; },
-  get ['brand-lighter']() { return this['orange-lighter']; },
-  get ['brand-lightest']() { return this['orange-lightest']; },
+  get ['brand-darkest']() { return this['grey-darkest']; },
+  get ['brand-darker']() { return this['grey-darker']; },
+  get ['brand-dark']() { return this['grey-dark']; },
+  get ['brand']() { return this['grey']; },
+  get ['brand-light']() { return this['grey-light']; },
+  get ['brand-lighter']() { return this['grey-lighter']; },
+  get ['brand-lightest']() { return this['grey-lightest']; },
 }
 
 module.exports = {
@@ -266,6 +266,8 @@ module.exports = {
     '3xl': '1.875rem',  // 30px
     '4xl': '2.25rem',   // 36px
     '5xl': '3rem',      // 48px
+    '6xl': '4rem',      // 64px
+    '7xl': '5rem',      // 80px
   },
 
 

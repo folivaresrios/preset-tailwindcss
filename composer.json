@@ -1,5 +1,5 @@
 {
-    "name": "laravel-frontend-presets/tailwindcss",
+    "name": "folivaresrios/preset-tailwindcss",
     "description": "Laravel 5.5 frontend preset for Tailwind CSS",
     "keywords": ["laravel", "preset", "tailwindcss"],
     "license": "MIT",
@@ -8,13 +8,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelFrontendPresets\\TailwindCssPreset\\": "src/"
+            "KissDev\\TailwindCssPreset\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
+                "KissDev\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
             ]
         }
     }

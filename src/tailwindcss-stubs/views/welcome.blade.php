@@ -11,17 +11,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-brand-lightest font-sans font-normal">
     <div class="flex flex-col">
         @if(Route::has('login'))
             <div class="absolute pin-t pin-r mt-4 mr-4">
                 @auth
-                    <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase">Home</a>
+                    <a href="{{ url('/home') }}" class="no-underline hover:text-brand-darker text-sm font-normal text-brand-dark uppercase">Home</a>
                 @else
-                    <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase pr-6">Login</a>
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase">Register</a>
+                    <a href="{{ route('login') }}" class="no-underline hover:text-brand-darker text-xs font-normal text-brand-dark uppercase pr-8 tracking-wide">Login</a>
+                    <a href="{{ route('register') }}" class="no-underline hover:text-brand-darker text-xs font-normal text-brand-dark uppercase pr-8 tracking-wide">Register</a>
                 @endauth
             </div>
         @endif
@@ -29,7 +29,7 @@
         <div class="min-h-screen flex items-center justify-center">
             <div class="flex flex-col justify-around h-full">
                 <div>
-                    <h1 class="text-grey-darker text-center font-hairline tracking-wide text-7xl mb-6">
+                    <h1 class="text-grey-darker text-center font-hairline tracking-wide text-7xl mb-6 text-sm">
                         {{ config('app.name', 'Laravel') }}
                     </h1>
                     <ul class="list-reset">
