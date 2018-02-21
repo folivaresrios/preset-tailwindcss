@@ -28,15 +28,20 @@ class TailwindCssPreset extends Preset
     {
         return [
             'tailwindcss' => '^0.4.0',
-        ] + Arr::except($packages, ['bootstrap-sass', 'jquery']);
+            'glob-all' => '*',
+            'purgecss-webpack-plugin' => '*'
+        ] + Arr::except($packages, ['bootstrap', 'bootstrap-sass', 'jquery']);
     }
 
     protected static function updateStyles()
     {
+        (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
         (new Filesystem)->delete(public_path('js/app.js'));
         (new Filesystem)->delete(public_path('css/app.css'));
-
-        copy(__DIR__ . '/tailwindcss-stubs/resources/assets/sass/app.scss', resource_path('assets/sass/app.scss'));
+        if (!file_exists(resource_path('assets/css'))) {
+            mkdir(resource_path('assets/css'));
+        }
+        copy(__DIR__ . '/tailwindcss-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
     }
 
     protected static function updateBootstrapping()

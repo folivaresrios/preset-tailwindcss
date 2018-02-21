@@ -19,7 +19,7 @@
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-center h-12">
                     <div class="ml-6">
-                        <a href="{{ url('/') }}" class="no-underline">
+                        <a href="{{ url('/') }}" class="no-underline text-grey-darkest">
                             {{ config('app.name', 'Laravel') }}
                         </a>
                     </div>
